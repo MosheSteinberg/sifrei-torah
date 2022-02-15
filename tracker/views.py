@@ -9,8 +9,10 @@ def index(request):
     return HttpResponse('Hi')
     
 def SeforimIndex(request):
-    list_of_seforim = [x.id + ": " + x.physical_location for x in SeferTorah.objects.all()]
-    return HttpResponse('<br>'.join(list_of_seforim))
+    context = {
+        'seforim': SeferTorah.objects.all()
+    }
+    return render(request, 'tracker/seforim_index.html', context)
 
 def IndividualSefer(request, id):
     

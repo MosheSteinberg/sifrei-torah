@@ -1,0 +1,9 @@
+{% if seforim %}
+    <ul>
+    {% for sefer in seforim %}
+        <li><a href="/polls/{{ sefer.id }}/">{{ sefer.donator }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No seforim stored.</p>
+{% endif %}
