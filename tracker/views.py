@@ -15,5 +15,7 @@ def SeforimIndex(request):
     return render(request, 'tracker/seforim_index.html', context)
 
 def IndividualSefer(request, id):
-    
-    return HttpResponse('Details of sefer %s here.' % id)
+    context = {
+        'sefer': SeferTorah.objects.get(id=id)
+    }
+    return render(request, 'tracker/individual_sefer.html', context)
