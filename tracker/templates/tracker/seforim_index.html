@@ -1,7 +1,7 @@
 {% if seforim %}
     <ul>
     {% for sefer in seforim %}
-        <li><a href="/polls/{{ sefer.id }}/">{{ sefer.donator }}</a></li>
+        <li><a href="/tracker/seforim/{{ sefer.id }}">{{ sefer.donator }}</a></li>
     {% endfor %}
     </ul>
 {% else %}
