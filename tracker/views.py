@@ -10,4 +10,4 @@ def SeforimIndex(request):
     return HttpResponse('List seforim here')
 
 def IndividualSefer(request, id):
-    return HttpResponse('Details of sefer %s here.', id)
+    return HttpResponse('Details of sefer %s here.' % id)
