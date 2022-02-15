@@ -6,14 +6,17 @@ class OwnershipChoices(models.TextChoices):
     LOAN = "Loan", "Loan"
     OWNED = "Owned", "Owned"
 
-class QualityChoices(models.IntegerChoices):
+class QualityChoices(models.TextChoices):
     TOP = 1, "First"
     SECOND = 2, "Second"
     THIRD = 3, "Third"
     DONTUSE = 4, "Don't Use"
 
 class PhysicalLocation(models.Model):
-    name = models.CharField(max_length=200)
+    name = models.CharField(max_length=200, verbose_name='Physical Location')
+
+    def __str__(self):
+        return self.name
 
 
 class SeferTorah(models.Model):
@@ -30,7 +33,10 @@ class SeferTorah(models.Model):
     location_in_text = models.CharField(max_length=250, default="פרשת השבוע")
     quality = models.CharField(choices=QualityChoices.choices, max_length=10, default=QualityChoices.DONTUSE)
 
-    picture = models.ImageField(null=True)
+    picture = models.ImageField(blank=True)
 
     last_checked = models.DateField(null=True)
     donated = models.DateField(null=True)
+
+    def __str__(self):
+        return (str(self.id) + " - " + self.donator)
