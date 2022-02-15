@@ -8,7 +8,7 @@ from .models import SeferTorah
 # Create your views here.
 
 def index(request):
-    return HttpResponse('Hi')
+    return render(request, 'base.html')
     
 @login_required
 def SeforimIndex(request):

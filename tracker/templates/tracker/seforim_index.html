@@ -1,3 +1,7 @@
+{% extends 'base.html' %}
+{% block title%}Seforim Index{% endblock %}
+
+{% block content %}
 {% if seforim %}
     <ul>
     {% for sefer in seforim %}
@@ -7,3 +11,4 @@
 {% else %}
     <p>No seforim stored.</p>
 {% endif %}
+{% endblock %}

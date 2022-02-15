@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{% block title %} Sifrei Torah {% endblock %}</title>
+    </head>
+
+    <body>
+        <div id="sidebar">
+            <ul>
+                <li><a href="{% url 'tracker:index' %}">Home</a></li>
+                <li><a href="{% url 'tracker:seforim-index' %}">Seforim</a></li>
+            </ul>
+        </div>
+
+        <div id="content">
+            {% block content %}{% endblock content %}
+        </div>
+    </body>
+</html>
