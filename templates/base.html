@@ -3,16 +3,18 @@
     <head>
         <title>{% block title %} Sifrei Torah {% endblock %}</title>
     </head>
+    
+    {% load static %}
+
+    <link rel="stylesheet" type="text/css" href="{% static 'stylesheet.css' %}">
 
     <body>
-        <div id="sidebar">
-            <ul>
-                <li><a href="{% url 'tracker:index' %}">Home</a></li>
-                <li><a href="{% url 'tracker:seforim-index' %}">Seforim</a></li>
-            </ul>
+        <div class="sidebar">
+            <a href="{% url 'tracker:index' %}">Home</a>
+            <a href="{% url 'tracker:seforim-index' %}">Seforim</a>
         </div>
 
-        <div id="content">
+        <div class="content">
             {% block content %}{% endblock content %}
         </div>
     </body>
