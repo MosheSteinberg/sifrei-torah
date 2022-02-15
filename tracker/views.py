@@ -5,3 +5,9 @@ from django.http import HttpResponse
 
 def index(request):
     return HttpResponse('Hi')
+    
+def SeforimIndex(request):
+    return HttpResponse('List seforim here')
+
+def IndividualSefer(request, id):
+    return HttpResponse('Details of sefer %s here.', id)
