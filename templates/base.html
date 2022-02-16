@@ -7,8 +7,14 @@
     {% load static %}
 
     <link rel="stylesheet" type="text/css" href="{% static 'stylesheet.css' %}">
+    <link rel="shortcut icon" type="image/png" href="{% static 'ner icon.png' %}"/>
 
     <body>
+        <div class="topbar">
+            {% if user.is_authenticated %}
+            Hello {{user.username}}
+            {% endif %}
+        </div>
         <div class="sidebar">
             <a href="{% url 'tracker:index' %}">Home</a>
             <a href="{% url 'tracker:seforim-index' %}">Seforim</a>
