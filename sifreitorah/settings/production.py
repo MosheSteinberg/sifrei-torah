@@ -1,6 +1,9 @@
 from .base import *
+from os import environ
 
-DEBUG = True
+DEBUG = False
+
+SECRET_KEY = environ.get('DJANGO_SECRET_KEY')
 
 try:
     from .local import *
