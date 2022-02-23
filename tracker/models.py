@@ -38,5 +38,8 @@ class SeferTorah(models.Model):
     last_checked = models.DateField(null=True)
     donated = models.DateField(null=True)
 
+    class Meta:
+        verbose_name_plural = "Sifrei Torah"
+
     def __str__(self):
         return (str(self.id) + " - " + self.donator)
