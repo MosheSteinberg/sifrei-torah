@@ -3,11 +3,19 @@
 
 {% block content %}
 {% if seforim %}
-    <ul>
+    <table class="seforim-table">
+        <tr>
+            <th>Sefer</th>
+            <th>Up to</th>
+            <th>Stored in</th>
     {% for sefer in seforim %}
-        <li><a href="{% url 'tracker:individual-sefer' sefer.id %}">{{sefer.id}} - {{ sefer.donator }}</a></li>
+        <tr>
+        <td class="seforim-cell"><a href="{% url 'tracker:individual-sefer' sefer.id %}">{{sefer.id}} - {{ sefer.donator }}</a></td>
+        <td class="seforim-cell">{{sefer.location_in_text}}</td>
+        <td class="seforim-cell">{{sefer.physical_location}}</td>
+        </tr>
     {% endfor %}
-    </ul>
+    </table>
 {% else %}
     <p>No seforim stored.</p>
 {% endif %}
