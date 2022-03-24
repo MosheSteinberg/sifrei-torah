@@ -5,7 +5,7 @@
 {% if seforim %}
     <ul>
     {% for sefer in seforim %}
-        <li><a href="{% url 'tracker:individual-sefer' sefer.id %}">{{ sefer.donator }}</a></li>
+        <li><a href="{% url 'tracker:individual-sefer' sefer.id %}">{{sefer.id}} - {{ sefer.donator }}</a></li>
     {% endfor %}
     </ul>
 {% else %}
