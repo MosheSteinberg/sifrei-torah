@@ -43,3 +43,9 @@ class SeferTorah(models.Model):
 
     def __str__(self):
         return (str(self.id) + " - " + self.donator)
+
+
+class SoferNotes(models.Model):
+    sefer = models.ForeignKey(SeferTorah, on_delete=models.CASCADE)
+    note = models.TextField()
+    date_of_note = models.DateTimeField(auto_now_add=True, editable=False)
